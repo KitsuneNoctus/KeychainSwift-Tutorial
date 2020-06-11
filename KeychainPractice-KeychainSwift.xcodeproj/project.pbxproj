@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		3FB94B822491A2D9005947FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB94B802491A2D9005947FD /* LaunchScreen.storyboard */; };
 		3FB94B8D2491A2DA005947FD /* KeychainPractice_KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB94B8C2491A2DA005947FD /* KeychainPractice_KeychainSwiftTests.swift */; };
 		3FB94B982491A2DA005947FD /* KeychainPractice_KeychainSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB94B972491A2DA005947FD /* KeychainPractice_KeychainSwiftUITests.swift */; };
+		3FB94BA72491A560005947FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB94BA62491A560005947FD /* DetailViewController.swift */; };
+		3FF80F832491AAFF00FD0B20 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3FF80F822491AAFF00FD0B20 /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3FB94B932491A2DA005947FD /* KeychainPractice-KeychainSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KeychainPractice-KeychainSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB94B972491A2DA005947FD /* KeychainPractice_KeychainSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPractice_KeychainSwiftUITests.swift; sourceTree = "<group>"; };
 		3FB94B992491A2DA005947FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FB94BA62491A560005947FD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3FB94BA82491A739005947FD /* KeychainPractice-KeychainSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "KeychainPractice-KeychainSwift.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF80F832491AAFF00FD0B20 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +104,10 @@
 		3FB94B742491A2D6005947FD /* KeychainPractice-KeychainSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3FB94BA82491A739005947FD /* KeychainPractice-KeychainSwift.entitlements */,
+				3FB94BA52491A547005947FD /* Controllers */,
 				3FB94B752491A2D6005947FD /* AppDelegate.swift */,
 				3FB94B772491A2D6005947FD /* SceneDelegate.swift */,
-				3FB94B792491A2D6005947FD /* ViewController.swift */,
 				3FB94B7B2491A2D6005947FD /* Main.storyboard */,
 				3FB94B7E2491A2D9005947FD /* Assets.xcassets */,
 				3FB94B802491A2D9005947FD /* LaunchScreen.storyboard */,
@@ -128,6 +134,15 @@
 			path = "KeychainPractice-KeychainSwiftUITests";
 			sourceTree = "<group>";
 		};
+		3FB94BA52491A547005947FD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FB94B792491A2D6005947FD /* ViewController.swift */,
+				3FB94BA62491A560005947FD /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +159,9 @@
 			dependencies = (
 			);
 			name = "KeychainPractice-KeychainSwift";
+			packageProductDependencies = (
+				3FF80F822491AAFF00FD0B20 /* KeychainSwift */,
+			);
 			productName = "KeychainPractice-KeychainSwift";
 			productReference = 3FB94B722491A2D6005947FD /* KeychainPractice-KeychainSwift.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 3FB94B692491A2D6005947FD;
+			packageReferences = (
+				3FF80F812491AAFF00FD0B20 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = 3FB94B732491A2D6005947FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,6 +283,7 @@
 				3FB94B7A2491A2D6005947FD /* ViewController.swift in Sources */,
 				3FB94B762491A2D6005947FD /* AppDelegate.swift in Sources */,
 				3FB94B782491A2D6005947FD /* SceneDelegate.swift in Sources */,
+				3FB94BA72491A560005947FD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +456,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "KeychainPractice-KeychainSwift/KeychainPractice-KeychainSwift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VH946FT2M;
 				INFOPLIST_FILE = "KeychainPractice-KeychainSwift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +475,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "KeychainPractice-KeychainSwift/KeychainPractice-KeychainSwift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VH946FT2M;
 				INFOPLIST_FILE = "KeychainPractice-KeychainSwift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3FF80F812491AAFF00FD0B20 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3FF80F822491AAFF00FD0B20 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FF80F812491AAFF00FD0B20 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3FB94B6A2491A2D6005947FD /* Project object */;
 }
