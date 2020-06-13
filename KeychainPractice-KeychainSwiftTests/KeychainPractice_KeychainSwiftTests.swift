@@ -42,6 +42,10 @@ class KeychainPractice_KeychainSwiftTests: XCTestCase {
     }
     
     func testDeleteMessage(){
+        vc.save(mess: "TestingD", key: "TestD")
+        XCTAssertEqual("TestingD", vc.keychain.get("TestD"))
+        vc.delete(key: "TestD")
+        XCTAssertNotEqual("TestingD", vc.keychain.get("TestD"))
         
     }
 
